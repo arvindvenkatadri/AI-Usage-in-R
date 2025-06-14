@@ -1,0 +1,15 @@
+{
+  "hash": "31188104bc4d8cf91a28632ad1dcef0e",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"AI Packages in R\"\nauthor: \"Arvind V\"\ndate: \"2024-12-03\"\norder: 20\ncategories: [news, code, analysis]\nimage: \"image.jpg\"\n---\n\n## Introduction\n\nI am going to examine the usage of AI related packages in R, to see if I\ncan teach better stuff and if they can help make tasks in Art/Design,\nand in Business, easier to execute.\n\n## Setting up the Packages\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ellmer)\nlibrary(ollamar)\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\n\nAttaching package: 'ollamar'\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\nThe following object is masked from 'package:stats':\n\n    embed\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\nThe following object is masked from 'package:methods':\n\n    show\n```\n\n\n:::\n\n```{.r .cell-code}\nlibrary(mall)\n```\n:::\n\n\n## References\n\n1.  <https://elmer.tidyverse.org/>\n2.  <https://mlverse.github.io/mall/>\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,28 @@
+---
+title: "AI Packages in R"
+author: "Arvind V"
+date: "2024-12-03"
+order: 20
+categories: [news, code, analysis]
+image: "image.jpg"
+---
+
+## Introduction
+
+I am going to examine the usage of AI related packages in R, to see if I
+can teach better stuff and if they can help make tasks in Art/Design,
+and in Business, easier to execute.
+
+## Setting up the Packages
+
+```{r}
+#| label: setup
+library(ellmer)
+library(ollamar)
+library(mall)
+```
+
+## References
+
+1.  <https://elmer.tidyverse.org/>
+2.  <https://mlverse.github.io/mall/>

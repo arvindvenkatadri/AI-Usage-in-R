@@ -1,0 +1,13 @@
+---
+title: "Welcome To My Blog"
+author: "Arvind V."
+date: "2025-06-01"
+date-modified: "`r format(Sys.Date(), '%B, %d, %Y')`"
+order: 05
+categories: [news]
+image: "thumbnail.jpg"
+---
+
+This is the first post in my Quarto blog, where I keep my working notes
+in using AI tools with R. Welcome!
+

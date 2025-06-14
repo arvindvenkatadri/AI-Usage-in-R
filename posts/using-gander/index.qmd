@@ -1,0 +1,112 @@
+---
+title: "Using gander and ellmer"
+author: "Arvind V"
+date: "2025-06-14"
+order: 10
+date-modified: "`r format(Sys.Date(), '%B, %d, %Y')`"
+categories: [news, code, analysis]
+---
+
+## Introduction
+
+I am going to use `gander` to create a simple example of how to use it.
+It seems `gander` can allow the user to **see the data** they are
+working with and is able to generate accurate R code for graphs.
+
+## Setting Up R Packages
+
+```{r}
+#| label: setup
+#| message: false
+#| 
+library(tidyverse)
+library(ggformula)
+library(gander)
+library(ellmer)
+```
+
+## Setting up `gander` and `ellmer`
+
+There are a few steps involved in setting up `gander` and `ellmer` to
+work with your preferred LLM (Large Language Model) service. The steps
+are as follows:
+
+1.  Install the `gander` and `ellmer` packages.
+2.  Get your API Key, from say Anthropic, ChatGPT, or Ollama.\
+
+-   Anthropic: visit <https://console.anthropic.com/settings/keys>
+-   ChatGPT: visit <https://platform.openai.com/api-keys>
+-   Ollama: visit <https://ollama.com/> \# runs LLMs LOCALLY! NO API Key
+    needed.
+
+See “Choosing a model” in vignette("gander", package = "gander") to
+learn more.
+
+3.  Save the `API_KEY` of you preferred LLM service in your `.Rprofile`
+    file. For example, if you are using Ollama, you would add the
+    following line to your `.Rprofile`, as follows:
+
+```{r}
+#| label: gander-setup
+#| eval: false
+
+## RUN THESE IN YOUR CONSOLE
+install.packages("usethis")
+library(usethis)
+usethis::edit_r_profile()
+
+```
+
+This will open the `.Rprofile` file in your RStudio editor. You will
+need to add (one of ) the following lines to the file:
+
+OPENAI_API_KEY = "YOUR_API_KEY_HERE"\\ ANTHROPIC_API_KEY =
+"YOUR_API_KEY_HERE" etc.
+
+4.  Also add one of these line to the `.Rprofile` file:
+
+`options(.gander_chat = ellmer::chat_anthropic())`
+
+5.  If you wish to run models locally for free, you can use Ollama. In
+    that case, you will need to:
+
+-   install the Ollama CLI <https://ollama.com/download>
+-   download a model from <https://ollama.com/models>, say "llama3.1"
+-   then add the following line to your `.Rprofile` file:
+    `options(.gander_chat = ellmer::chat_ollama(model = "llama3.1"))`
+-   MacOS: Ensure you start `ollama` server by running `ollama serve` in
+    your terminal.
+-   Windows: Add ollama.exe to your startup programs
+
+6.  Setup the `gander` assistant: The `gander` assistant is interfaced
+    with the via the `gander addin`. For easiest access, we recommend
+    registering the `gander addin` to a keyboard shortcut.
+
+In RStudio, navigate to
+`Tools > Modify Keyboard Shortcuts > Search "gander"`. The package
+author suggests `Ctrl+Alt+G` (or `Ctrl+Cmd+G` on macOS).
+
+7.  Restart RStudio to ensure the changes take effect.
+
+## Using `gander`
+
+The `gander` package speaks with `ellmer` to "speak with an LLM". Hence
+there is a small amount of setup required for `gander` to deliver its
+goods.
+
+As per @ref1, let us use the `stackoverflow` data from the `modeldata`
+package to create our graphs.
+
+```{r}
+data("stackoverflow", package = "modeldata")
+stackoverflow
+names(stackoverflow)
+```
+
+Let us now create a simple bar plot based on the variable "Country".
+
+## References
+
+1.  <https://posit.co/blog/introducing-gander/>
+2.  <https://simonpcouch.github.io/gander/>
+3.  
