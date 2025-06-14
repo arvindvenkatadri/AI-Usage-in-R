@@ -60,8 +60,11 @@ usethis::edit_r_profile()
 This will open the `.Rprofile` file in your RStudio editor. You will
 need to add (one of ) the following lines to the file:
 
-OPENAI_API_KEY = "YOUR_API_KEY_HERE"\\ ANTHROPIC_API_KEY =
-"YOUR_API_KEY_HERE" etc.
+OPENAI_API_KEY = "YOUR_API_KEY_HERE"
+
+ANTHROPIC_API_KEY = "YOUR_API_KEY_HERE" 
+
+etc.
 
 4.  Also add one of these line to the `.Rprofile` file:
 
@@ -104,6 +107,23 @@ names(stackoverflow)
 ```
 
 Let us now create a simple bar plot based on the variable "Country".
+
+
+## Scatter plot for Salary vs Years coded
+```{r}
+gf_point(data = stackoverflow, Salary ~ YearsCodedJob) %>%
+  gf_lm() %>% 
+  gf_theme(theme_bw()) 
+
+```
+
+```{r}
+
+gf_boxplot(Salary ~ YearsCodedJob, group = ~ YearsCodedJob,data = stackoverflow)
+
+```
+
+
 
 ## References
 

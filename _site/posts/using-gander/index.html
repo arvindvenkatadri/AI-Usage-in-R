@@ -236,7 +236,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">edit_r_profile</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This will open the <code>.Rprofile</code> file in your RStudio editor. You will need to add (one of ) the following lines to the file:</p>
-<p>OPENAI_API_KEY = “YOUR_API_KEY_HERE”\ ANTHROPIC_API_KEY = “YOUR_API_KEY_HERE” etc.</p>
+<p>OPENAI_API_KEY = “YOUR_API_KEY_HERE”</p>
+<p>ANTHROPIC_API_KEY = “YOUR_API_KEY_HERE”</p>
+<p>etc.</p>
 <ol start="4" type="1">
 <li>Also add one of these line to the <code>.Rprofile</code> file:</li>
 </ol>
@@ -314,6 +316,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Let us now create a simple bar plot based on the variable “Country”.</p>
+</section>
+<section id="scatter-plot-for-salary-vs-years-coded" class="level2">
+<h2 class="anchored" data-anchor-id="scatter-plot-for-salary-vs-years-coded">Scatter plot for Salary vs Years coded</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_point</span>(<span class="at">data =</span> stackoverflow, Salary <span class="sc">~</span> YearsCodedJob) <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gf_lm</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gf_theme</span>(<span class="fu">theme_bw</span>()) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using the `size` aesthetic with geom_line was deprecated in ggplot2 3.4.0.
+ℹ Please use the `linewidth` aesthetic instead.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gf_boxplot</span>(Salary <span class="sc">~</span> YearsCodedJob, <span class="at">group =</span> <span class="sc">~</span> YearsCodedJob,<span class="at">data =</span> stackoverflow)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
